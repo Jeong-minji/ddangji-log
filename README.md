@@ -1,4 +1,4 @@
-💦 Acid-log
+👻 DDangji-log
 
 ---
 
