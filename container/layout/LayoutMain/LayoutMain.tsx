@@ -6,6 +6,7 @@ import Navigation from "../Navigation/Navigation";
 import { MainContent } from "./LayoutMainStyle";
 
 import { LayoutMainProps } from "../../containerType";
+import Footer from "../Footer/Footer";
 
 const LayoutMain: FC<LayoutMainProps> = ({ children }) => {
   const router = useRouter();
@@ -14,6 +15,7 @@ const LayoutMain: FC<LayoutMainProps> = ({ children }) => {
     <>
       <Navigation />
       <MainContent path={router.pathname}>{children}</MainContent>
+      <Footer />
     </>
   );
 };

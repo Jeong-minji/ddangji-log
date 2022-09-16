@@ -52,6 +52,7 @@ export interface ThemeType {
     gray_blue_99: string;
     gray_blue_100: string;
     blue: string;
+    blue_custom: string;
     blue_dark_1: string;
     blue_dark_2: string;
     blue_light_1: string;

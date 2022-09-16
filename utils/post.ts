@@ -6,7 +6,6 @@ import * as remarkHtml from "remark-html";
 
 import { Category, Post, PostMeta } from "../interface/CommonTypes";
 
-import { CATEGORIES } from "../lib/config/blogConfig";
 import { differenceInDays } from "date-fns";
 
 const postRoute = path.join(process.cwd(), "posts");
@@ -36,23 +35,6 @@ export const getAllPosts = () => {
   return sortedPostList;
 };
 
-export const getRecommendedPosts = (posts: Post[], filterList: string[]) => {
-  return posts.filter(({ id }) => filterList.includes(id));
-};
-
-export const getCategoryPosts = (posts: Post[]): Category[] => {
-  return Object.values(CATEGORIES).map(
-    ({ tag, infoBackground, ...restProps }) => ({
-      tag: tag,
-      infoBackground: infoBackground as Category["infoBackground"],
-      postIdList: posts
-        .filter(({ tags }) => tags.includes(tag))
-        .map((post) => post.id),
-      ...restProps,
-    })
-  );
-};
-
 export const getAllPostPaths = () => {
   const fileNames = fs.readdirSync(postRoute);
 
@@ -63,14 +45,6 @@ export const getAllPostPaths = () => {
       },
     };
   });
-};
-
-export const getCategoryPaths = () => {
-  return Object.keys(CATEGORIES).map((categoryId) => ({
-    params: {
-      categoryId,
-    },
-  }));
 };
 
 export async function getPostData(postId: string) {

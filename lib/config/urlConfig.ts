@@ -1,4 +1,4 @@
-export const DOMAIN = "https://www.acidlog.today";
+export const DOMAIN = "https://ddangji-log.vercel.app";
 
 export const URL = {
   IMAGE: {

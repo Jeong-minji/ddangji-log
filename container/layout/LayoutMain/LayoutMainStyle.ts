@@ -11,3 +11,7 @@ export const MainContent = styled.div<{ path: string }>`
     gap: ${theme.figure * 10}px;
   `}
 `;
+
+export const Container = styled.div`
+  width: ${({ theme }) => theme.figure * 6}rem;
+`;

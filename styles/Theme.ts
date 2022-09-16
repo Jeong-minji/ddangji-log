@@ -54,6 +54,7 @@ const theme: ThemeType = {
     gray_blue_99: "#FAFBFC",
     gray_blue_100: "#FFFFFF",
     blue: "#3361FF",
+    blue_custom: "#1756a9",
     blue_dark_1: "#194DFF",
     blue_dark_2: "#0039FF",
     blue_light_1: "#4D74FF",

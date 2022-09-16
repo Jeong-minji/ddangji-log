@@ -13,9 +13,9 @@ export default function Home({ allPostsData }) {
   return (
     <>
       <Helmet
-        title="Acidlog | Main"
-        description="개발자 성장 일기"
-        image={`${URL.IMAGE.BASE}/og_image.png`}
+        title="DDangji-log"
+        description="Record the experience"
+        image={`${URL.IMAGE.BASE}/favicon.png`}
         url={asPath ? `${DOMAIN}${asPath}` : DOMAIN}
       />
       <HomeMain posts={allPostsData} />

@@ -5,6 +5,10 @@ const globalStyle = (
     styles={css`
       * {
         box-sizing: border-box;
+        font-family: 400 16px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI",
+          Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji",
+          "Segoe UI Emoji", "Segoe UI Symbol";
+        background-color: rgb(253, 253, 253);
       }
       html,
       body,
@@ -91,7 +95,6 @@ const globalStyle = (
         padding: 0;
         border: 0;
         font-size: 100%;
-        font-family: Noto Sans KR, sans-serif;
         letter-spacing: -1px;
         vertical-align: baseline;
       }
@@ -146,9 +149,6 @@ const globalStyle = (
         padding: 0;
         border: 0;
         outline: none;
-      }
-      code {
-        font-family: Fira Code, monospace;
       }
     `}
   />
