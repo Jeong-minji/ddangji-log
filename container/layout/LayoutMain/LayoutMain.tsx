@@ -14,7 +14,7 @@ const LayoutMain: FC<LayoutMainProps> = ({ children }) => {
   return (
     <>
       <Navigation />
-      {/* <MainContent path={router.pathname}>{children}</MainContent> */}
+      <MainContent path={router.pathname}>{children}</MainContent>
       <Footer />
     </>
   );

@@ -9,7 +9,6 @@ import {
 import { LogMainProps } from "../../containerType";
 import LogCategory from "../../../components/Log/LogCategory/LogCategory";
 import useLogMain from "./useLogMain";
-// import { LOG } from "../../../lib/config/blogConfig";
 
 const LogMain = ({ allLogs }: LogMainProps) => {
   const { componentProps, filteredLogs } = useLogMain({ allLogs });
