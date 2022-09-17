@@ -3,7 +3,7 @@ title: "Nvm"
 date: "2022-07-26"
 description: ""
 tags: ["node"]
-thumbnail: ""
+thumbnail: "nvm.png"
 ---
 
 처음 회사 프로젝트를 클론받고 빌드를 시작했더니 node modules에서 에러가 발생하였다. 원인을 찾아보니 프로젝트가 사용하고 있는 node의 버전이 데스크톱에 설치 되어있는 버전과 맞지 않아 발생한 에러였다.

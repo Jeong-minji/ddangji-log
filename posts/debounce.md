@@ -3,7 +3,7 @@ title: "React에서 lodash debounce가  정상적으로 작동하지 않을 때"
 date: "2022-07-26"
 description: ""
 tags: ["js"]
-thumbnail: ""
+thumbnail: "lodash.png"
 ---
 
 서치 모듈을 만들면서 lodash debounce를 사용하게 되었다. 검색어를 입력하면 그에 따른 추천 키워드를 서버에서 받아와 실시간으로 띄워주는 기능이었는데, 사용자가 텍스트를 적을 때마다 매번 api 요청을 보내면 안되기 때문에 debounce를 사용하게 되었다.
