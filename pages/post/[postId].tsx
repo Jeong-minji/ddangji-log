@@ -21,7 +21,7 @@ const Post = (props: any) => {
   return (
     <>
       <Helmet
-        title={`Acidlog | ${props.postData.title}`}
+        title={`Ddangji-log | ${props.postData.title}`}
         description={props.postData.description}
         image={
           checkGif(props.postData.thumbnail)
