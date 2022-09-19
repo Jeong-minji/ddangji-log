@@ -7,13 +7,14 @@ import { Container } from "../LayoutMain/LayoutMainStyle";
 export const NavigationWrapper = styled.nav`
   display: flex;
   justify-content: center;
-  position: fixed;
+  position: sticky;
   top: 0;
   padding: ${({ theme }) => theme.figure / 2}px;
   width: 100%;
   z-index: 1000;
   border-top: 4px solid ${({ theme }) => theme.colors.black};
   border-bottom: 1px solid ${({ theme }) => theme.colors.black_10};
+  background-color: rgb(253, 253, 253);
 `;
 
 export const NavigationContainer = styled(Container)`

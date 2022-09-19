@@ -25,7 +25,7 @@ const Post = (props: any) => {
         description={props.postData.description}
         image={
           checkGif(props.postData.thumbnail)
-            ? `${URL.IMAGE.BASE}/og_image.png`
+            ? `${URL.IMAGE.BASE}/main_logo.png`
             : `${URL.IMAGE.POSTS}/${query.postId}/${props.postData.thumbnail}`
         }
         url={asPath ? `${DOMAIN}${asPath}` : DOMAIN}

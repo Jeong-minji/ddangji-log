@@ -20,24 +20,24 @@ Nvm은 Node.js를 설치하는 툴이다. 따라서 node를 설치하고 nvm을 
 ## Install
 
 우선, 기존에 설치되어 있는 node.js를 제거하고 nvm 설치를 진행해야 한다.
-Nvm을 설치하고 환경변수에 대한 세팅이 필요한데, 이러한 내용은 [해당 링크][https://www.youtube.com/watch?v=b26yiuc5zpm]의 영상을 보면 니꼬쌤이 잘 설명해주시니 참고하면 된다. 완료되고 나면 `nvm —v`으로 버전을 확인하여 정상적으로 설치되었는지 확인하면된다.
+Nvm을 설치하고 환경변수 세팅을 완료하고 나면 `nvm —v`으로 버전을 확인하여 정상적으로 설치되었는지 확인하면 된다.
 
 ## Node Version Install
 
 Nvm을 설치했으니, 이제 필요한 node 버전을 설치하면 된다.
 버전은 버전의 형태를 띄는 문자열이라면 모두 가능하다.
 
-```
+```js
 $ nvm install 14
 $ nvm install 16.14.0
 $ nvm install v8
 ```
 
-Node 최신버전을 설치하고 싶다면 버전 자리에 `node`, LTS 버전을 설치하고 싶다면 `—LTS`를 입력한다.
+Node 최신버전을 설치하고 싶다면 버전 자리에 `node`, LTS 버전을 설치하고 싶다면 `— LTS`를 입력한다.
 
 ## 명령어
 
-```
+```js
 // 해당 버전 node 사용
 $ nvm use <version>
 
@@ -60,7 +60,6 @@ Default로 설정되어있는 node의 버전이 16인데 프로젝트에서 14�
 ## 매번 nvm use 명령어 입력하기 귀찮을 때
 
 프로젝트를 실행시킬 때 마다 매번 명령어에 버전을 적어줘야하면 정말정말 귀찮다. 한 글자라도 줄이기위해 다음 방법을 사용할 수 있다.
-(캡쳐사진)
 
 1. 프로젝트의 디렉토리 root에 `.nvmrc` 파일 생성
 2. `.nvmrc` 파일에는 해당 프로젝트에서 사용할 node 버전 작성
@@ -68,6 +67,4 @@ Default로 설정되어있는 node의 버전이 16인데 프로젝트에서 14�
 
 위의 프로세스를 걸치면 실행 전에 `nvm use`만 입력해도 알아서 `.nvmrc`에 명시했던 버전으로 변경된다.
 
-## 참고자료
-
-[nvm gitHub][https://github.com/nvm-sh/nvm]
+[nvm 공식 사이트](https://github.com/nvm-sh/nvm)

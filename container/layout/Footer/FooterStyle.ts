@@ -5,10 +5,11 @@ import { Container } from "../LayoutMain/LayoutMainStyle";
 export const FooterWrapper = styled.footer`
   display: flex;
   justify-content: center;
-  position: fixed;
+  position: sticky;
   bottom: 0;
   width: 100%;
   border-top: 1px solid ${({ theme }) => theme.colors.black_10};
+  background-color: rgb(253, 253, 253);
 `;
 
 export const FooterContainer = styled(Container)`

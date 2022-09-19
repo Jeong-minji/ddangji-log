@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Prism as ReactSyntaxHighlighter } from "react-syntax-highlighter";
-import { oneDark } from "react-syntax-highlighter/dist/esm/styles/prism";
+import { okaidia, prism } from "react-syntax-highlighter/dist/esm/styles/prism";
 
 import {
   HeadingFirst,
@@ -31,7 +31,7 @@ const postSyntaxStyler = {
         children={String(children).replace(/\n$/, "")}
         language={match[1]}
         PreTag="pre"
-        style={oneDark}
+        style={okaidia}
         {...props}
       />
     ) : (

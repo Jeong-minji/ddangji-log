@@ -8,7 +8,6 @@ const globalStyle = (
         font-family: 400 16px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI",
           Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji",
           "Segoe UI Emoji", "Segoe UI Symbol";
-        background-color: rgb(253, 253, 253);
       }
       html,
       body,
@@ -95,7 +94,7 @@ const globalStyle = (
         padding: 0;
         border: 0;
         font-size: 100%;
-        letter-spacing: -1px;
+        letter-spacing: 1px;
         vertical-align: baseline;
       }
       pre {
