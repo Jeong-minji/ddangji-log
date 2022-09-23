@@ -9,10 +9,6 @@ export const PostItemWrapper = styled.li`
     transform: translateY(-4px);
     box-shadow: 0 10px 8px ${({ theme }) => theme.colors.black_10};
   }
-
-  &:hover > div > p {
-    color: ${({ theme }) => theme.colors.gray_blue_50};
-  }
 `;
 
 export const PostThumbnail = styled.img`
@@ -35,6 +31,10 @@ export const PostTitle = styled.p`
   word-break: keep-all;
   white-space: pre-line;
   transition: 0.3s;
+
+  &:hover {
+    color: ${({ theme }) => theme.colors.blue_light_2};
+  }
 
   ${({ theme }) => theme.typography.display_sm}
 `;

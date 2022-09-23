@@ -15,13 +15,12 @@ thumbnail: "thumbnail.png"
 
 Debounce를 사용하는 방법은 다음과 같다.
 
-```
+```js
 const sendQuery = (newValue: string) => {
-    setSearchValue(newValue)
-}
+  setSearchValue(newValue);
+};
 
-const delayQueryCall = debounce((newValue) => sendQuery(newValue), 300)
-
+const delayQueryCall = debounce((newValue) => sendQuery(newValue), 300);
 ```
 
 첫번째 인자로는 일정 시간 후에 실행할 콜백 함수가 들어가고, 두번째 인자로는 시간이 들어간다.
@@ -35,29 +34,33 @@ api 요청도 매번 하지 않아도 될 것이라고 생각하였다.
 
 ## Debounce가 작동하지 않은 이유
 
-우선 해당 문제가 발생한 환경은 리액트 함수형 컴포넌트이다.
-함수 내부에서 선언된 변수들은 함수의 실행이 끝나면 만료된다. 즉, 매번 함수가 실행될 때 마다 로컬 변수들은 초기화된다.
-Debounce는 내부적으로 setTimeout 함수를 통해 작동되는데, 함수형 컴포넌트에서 debounce를 사용한다는 것은 함수가 실행될 때마다 setTimeout 함수가 계속
-새로 생성되고 있다는 뜻이다. 이런 문제를 막으려면 디바운스 된 콜백에 대한 참조를 저장해야 한다(useState 처럼).
+우선 해당 문제가 발생한 이유는 함수형 컴포넌트였기 때문이다.
+함수 내부에서 선언된 변수들은 해당 함수의 실행이 끝나면 만료된다. 이것은 함수가 매번 실행될 때마다 내부 로컬 변수들이 초기화 된다는 뜻이다.
+Debounce는 내부적으로 setTimeout 함수를 통해 작동되는데, 함수형 컴포넌트에서 debounce를 사용한다는 것은 **함수가 실행될 때마다 setTimeout 함수가 계속
+새로 생성**되고 있다는 뜻이다.
+이러한 문제를 막으려면 debounce 된 콜백에 대한 참조를 저장해야 한다(useState 처럼).
 
 ## 해결 방법
 
 다음의 방법들을 썼더니 디바운스가 정상 작동 되었다.
-선호도나 상황에 따라 알맞은 방법을 선택하면 되겠지만, useCallback을 사용하는 것이 더 직관적이고 깔끔한 코드인 것 같아 두 번째 방법을 선택하였다.
+적절한 상황 또는 개인 취향에 따라 알맞은 방법을 선택하면 되겠지만, `useCallback`을 사용하는 것이 더 직관적이고 깔끔한 코드인 것 같아 두 번째 방법을 선택하였다.
 
 ### 1. useRef
 
-useRef가 반환한 값은 함수가 렌더링 되도 재생성되지 않기 때문에 debounce를 useRef로 감싸는 방법이 있다.
-한가지 단점은 값을 가져오기 위해서 <code>.current</code>를 뒤에 계속 붙여줘야 하기 때문에 조금은 번거롭다는 점이다.
+useRef가 반환한 값은 함수가 렌더링 되어도 재생성되지 않기 때문에 debounce를 useRef로 감싸는 방법이 있다.
+한가지 단점은 값을 가져오기 위해서 `.current`를 뒤에 계속 붙여줘야 하기 때문에 상당히 번거롭다는 점이다.
 
-```
-  const delayQueryCall = useRef(debounce((newValue) => sendQuery(newValue),
-  300))?.current
+```js
+const delayQueryCall = useRef(
+  debounce((newValue) => sendQuery(newValue), 300)
+)?.current;
 ```
 
 ### 2. useCallback
 
-```
-  const delayQueryCall = useCallback(debounce((newValue) => sendQuery(newValue),
-  300), [])
+```js
+const delayQueryCall = useCallback(
+  debounce((newValue) => sendQuery(newValue), 300),
+  []
+);
 ```

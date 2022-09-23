@@ -1,8 +1,9 @@
 import Link from "next/link";
 import { Prism as ReactSyntaxHighlighter } from "react-syntax-highlighter";
-import { okaidia, prism } from "react-syntax-highlighter/dist/esm/styles/prism";
+import { okaidia } from "react-syntax-highlighter/dist/esm/styles/prism";
 
 import {
+  Code,
   HeadingFirst,
   Paragraph,
   Image,
@@ -35,9 +36,9 @@ const postSyntaxStyler = {
         {...props}
       />
     ) : (
-      <code className={className} {...props}>
+      <Code className={className} {...props}>
         {children}
-      </code>
+      </Code>
     );
   },
   hr: ({ ...props }) => <HeadingRow {...props} />,

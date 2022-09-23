@@ -6,6 +6,7 @@ export const HeadingRow = styled.hr`
   border: none;
   border-top: 1px solid ${({ theme }) => theme.colors.black_30};
 `;
+
 export const HeadingFirst = styled.h1`
   position: relative;
   color: ${({ theme }) => theme.colors.gray_blue_20};
@@ -36,6 +37,7 @@ export const HeadingSecond = styled.h2`
 
   ${({ theme }) => theme.typography.display_sm}
 `;
+
 export const HeadingThird = styled.h3`
   color: ${({ theme }) => theme.colors.gray_blue_20};
   font-weight: ${({ theme }) => theme.typography.weight.medium};
@@ -159,4 +161,15 @@ export const OrderedList = styled.ol`
 export const ListItem = styled.li`
   font-weight: ${({ theme }) => theme.typography.weight.light};
   color: ${({ theme }) => theme.colors.black_80};
+`;
+
+export const Code = styled.code`
+  ${({ theme }) => theme.typography.text_sm}
+
+  padding: ${({ theme }) => theme.figure / 2}px ${({ theme }) =>
+    theme.figure}px;
+  background-color: ${({ theme }) => theme.colors.black_10};
+  border-radius: ${({ theme }) => theme.figure - 2}px;
+  font-family: inherit;
+  font-weight: ${({ theme }) => theme.typography.weight.medium};
 `;
