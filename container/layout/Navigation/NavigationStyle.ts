@@ -12,7 +12,7 @@ export const NavigationWrapper = styled.nav`
   padding: ${({ theme }) => theme.figure / 2}px;
   width: 100%;
   z-index: 1000;
-  border-top: 4px solid ${({ theme }) => theme.colors.black};
+  border-top: 4px solid ${({ theme }) => theme.colors.black_50};
   border-bottom: 1px solid ${({ theme }) => theme.colors.black_10};
   background-color: rgb(253, 253, 253);
 `;

@@ -8,6 +8,7 @@ export const FooterWrapper = styled.footer`
   position: sticky;
   bottom: 0;
   width: 100%;
+  padding: ${({ theme }) => theme.figure * 5}px;
   border-top: 1px solid ${({ theme }) => theme.colors.black_10};
   background-color: rgb(253, 253, 253);
 `;
@@ -16,7 +17,6 @@ export const FooterContainer = styled(Container)`
   display: flex;
   flex-direction: column;
   gap: ${({ theme }) => theme.figure * 2}px;
-  margin: ${({ theme }) => theme.figure * 5}px 0;
 `;
 
 export const FooterContact = styled.p`

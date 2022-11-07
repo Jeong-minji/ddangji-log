@@ -14,5 +14,5 @@ export const FOOTER = {
   },
   GITHUB: "https://github.com/Jeong-minji",
   INSTAGRAM: "https://www.instagram.com/min.ji__jeong",
-  DESCRIPTION: "description",
+  DESCRIPTION: "",
 };

@@ -1,7 +1,7 @@
 ---
 title: "삽질 기록 _ NextAuth"
 date: "2022-11-06"
-description: "코드 짜면서 마주친 에러와 삽질하여 해결한 기록을 쓴 글"
+description: "코드 짜면서 마주친 에러와 삽질하며 해결한 기록을 쓴 글"
 tags: ["react", "NextAuth"]
 thumbnail: "thumbnail.png"
 ---
