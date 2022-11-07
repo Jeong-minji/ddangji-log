@@ -1,7 +1,7 @@
 ---
 title: "React에서 lodash debounce가  정상적으로 작동하지 않을 때"
 date: "2022-07-26"
-description: ""
+description: "왜 동작하지 않았는고"
 tags: ["js"]
 thumbnail: "thumbnail.png"
 ---
@@ -64,3 +64,14 @@ const delayQueryCall = useCallback(
   []
 );
 ```
+
+## 업데이트 ⏱
+
+**2022.11.07.**
+
+오늘 작업하다가 스크롤 핸들링 하는 함수를 만들면서 throttle을 사용하게 되었는데, 이번에도 useCallback으로 감싸려고 하다가 뭔가 다른 현명한 방법이 있을 것 같아
+서치를 조금 해보았다. 아니나 다를까 그냥 `lodash`말고 `lodash-es`에서 throttle이나 debounce를 import 해서 쓰면 감싸고 그런 일은 하지 않아도 되었다.
+뒷통수를 얻어맞은 기분이었지만 지금이라도 알았으니 됐다.
+
+패키지를 import 해올 때 사이즈를 줄이기 위해 웹팩이나 번들러에서 TreeShaking을 반영하여 사용하지 않는 코드를 제거하는데, ES6 형식으로 export된 라이브러리가 아니라면
+TreeShaking이 반영되지 않는 경우도 있다. lodash 또한 마찬가지다. 따라서 ES6 구문으로 만들어진 lodash-es를 사용하는 것을 권장한다.
