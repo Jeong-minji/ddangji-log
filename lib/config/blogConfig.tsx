@@ -9,8 +9,8 @@ export const HOME = {
 
 export const FOOTER = {
   EMAIL: {
-    base: "jeongminji@gmail.com",
-    mailTo: "mailto:jeongminji@gmail.com",
+    base: "jeongminji5181@gmail.com",
+    mailTo: "mailto:jeongminji5181@gmail.com",
   },
   GITHUB: "https://github.com/Jeong-minji",
   INSTAGRAM: "https://www.instagram.com/min.ji__jeong",
