@@ -139,6 +139,10 @@ export const UnorderedList = styled.ul`
   ul, ol {
     margin-top: ${({ theme }) => theme.figure}px;
     margin-left: ${({ theme }) => theme.figure * 2}px;
+
+    li::marker {
+      content: "▫︎ ";
+    }
   }
 `;
 
@@ -148,7 +152,8 @@ export const OrderedList = styled.ol`
   gap: ${({ theme }) => theme.figure / 2}px;
   margin-bottom: ${({ theme }) => theme.figure / 2}px;
   color: ${({ theme }) => theme.colors.black_70};
-  list-style: inside;
+  list-style: decimal;
+  margin-left: ${({ theme }) => theme.figure * 2}px;
 
   ${({ theme }) => theme.typography.text_lg}
 
