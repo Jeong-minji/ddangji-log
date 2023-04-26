@@ -9,7 +9,6 @@ export const NavigationWrapper = styled.nav`
   justify-content: center;
   position: sticky;
   top: 0;
-  padding: ${({ theme }) => theme.figure / 2}px;
   width: 100%;
   z-index: 1000;
   border-top: 4px solid ${({ theme }) => theme.colors.black_50};

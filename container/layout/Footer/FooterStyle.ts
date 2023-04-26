@@ -8,7 +8,7 @@ export const FooterWrapper = styled.footer`
   position: sticky;
   bottom: 0;
   width: 100%;
-  padding: ${({ theme }) => theme.figure * 5}px;
+  padding: ${({ theme }) => theme.figure * 3}px;
   border-top: 1px solid ${({ theme }) => theme.colors.black_10};
   background-color: rgb(253, 253, 253);
 `;
