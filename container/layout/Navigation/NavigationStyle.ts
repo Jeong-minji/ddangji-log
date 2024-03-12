@@ -29,16 +29,3 @@ export const NavigationLogo = styled(Anchor)`
   align-items: center;
   gap: ${({ theme }) => theme.figure}px;
 `;
-
-export const NavigationSubWrapper = styled.div`
-  display: flex;
-  gap: ${({ theme }) => theme.figure}px;
-`;
-
-export const NavigationAnchor = styled(Anchor)`
-  ${({ theme }) => theme.typography.text_lg}
-
-  @media screen and (max-width: ${MAIN_RESPONSIVE.XS}px) {
-    ${({ theme }) => theme.typography.text_lg}
-  }
-`;

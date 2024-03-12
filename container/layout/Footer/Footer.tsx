@@ -14,9 +14,13 @@ import {
 
 import { FOOTER } from "../../../lib/config/blogConfig";
 
-const Footer = () => {
+export interface FooterProps {
+  isVisible: boolean;
+}
+
+const Footer = ({ isVisible }: FooterProps) => {
   return (
-    <FooterWrapper>
+    <FooterWrapper isVisible={isVisible}>
       <FooterContainer>
         <FooterContact>Contact</FooterContact>
         <FooterContents>
@@ -29,11 +33,11 @@ const Footer = () => {
           </FooterInfo>
           <FooterIcons>
             <li>
-              <Image src="/images/icons/github.png" width={16} height={16} />
+              <Image src='/images/icons/github.png' width={16} height={16} />
               <FooterAnchor href={FOOTER.GITHUB}>github</FooterAnchor>
             </li>
             <li>
-              <Image src="/images/icons/instagram.png" width={16} height={16} />
+              <Image src='/images/icons/instagram.png' width={16} height={16} />
               <FooterAnchor href={FOOTER.INSTAGRAM}>sns</FooterAnchor>
             </li>
           </FooterIcons>

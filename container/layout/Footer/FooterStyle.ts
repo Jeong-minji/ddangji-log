@@ -1,8 +1,9 @@
 import styled from "@emotion/styled";
 import Anchor from "../../../components/common/Link/Anchor";
 import { Container } from "../LayoutMain/LayoutMainStyle";
+import { FooterProps } from "./Footer";
 
-export const FooterWrapper = styled.footer`
+export const FooterWrapper = styled.footer<FooterProps>`
   display: flex;
   justify-content: center;
   position: sticky;
@@ -11,6 +12,7 @@ export const FooterWrapper = styled.footer`
   padding: ${({ theme }) => theme.figure * 3}px;
   border-top: 1px solid ${({ theme }) => theme.colors.black_10};
   background-color: rgb(253, 253, 253);
+  visibility: ${({ isVisible }) => (isVisible ? "visible" : "hidden")};
 `;
 
 export const FooterContainer = styled(Container)`
