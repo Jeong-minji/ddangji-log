@@ -1,7 +1,7 @@
 ---
-title: "React에서 lodash debounce가  정상적으로 작동하지 않을 때"
+title: "React에서 lodash debounce가 정상적으로 작동하지 않을 때"
 date: "2022-07-26"
-description: "왜 동작하지 않았는고"
+description: ""
 tags: ["js"]
 thumbnail: "thumbnail.png"
 ---

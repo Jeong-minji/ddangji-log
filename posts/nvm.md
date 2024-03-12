@@ -1,7 +1,7 @@
 ---
 title: "Nvm"
 date: "2022-07-26"
-description: "NVM이 무엇인고"
+description: "Nvm 개념 및 사용법"
 tags: ["node"]
 thumbnail: "thumbnail.png"
 ---

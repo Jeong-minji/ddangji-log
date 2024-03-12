@@ -3,6 +3,7 @@ import styled from "@emotion/styled";
 export const PostThumbnailWrapper = styled.div`
   position: relative;
   width: 100%;
+  height: 320px;
 `;
 
 export const PostThumbnailMask = styled.div`
@@ -14,7 +15,7 @@ export const PostThumbnailMask = styled.div`
 
 export const PostThumbnail = styled.img`
   width: 100%;
-  max-height: ${({ theme }) => theme.figure * 80}px;
+  height: 100%;
   object-fit: cover;
 `;
 
@@ -35,6 +36,7 @@ export const PostTitle = styled.h1`
   color: ${({ theme }) => theme.colors.white};
   font-weight: ${({ theme }) => theme.typography.weight.medium};
   text-align: center;
+  white-space: pre-wrap;
 
   ${({ theme }) => theme.typography.display_md}
 `;
@@ -57,7 +59,7 @@ export const PostMainContentWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: ${({ theme }) => theme.figure * 10}px
+  padding: ${({ theme }) => theme.figure * 2}px
     ${({ theme }) => theme.figure * 4}px;
 `;
 

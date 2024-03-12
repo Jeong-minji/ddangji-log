@@ -3,7 +3,6 @@ import styled from "@emotion/styled";
 export const HeadingRow = styled.hr`
   margin: ${({ theme }) => theme.figure}px 0
     ${({ theme }) => theme.figure * 3}px;
-  border: none;
   border-top: 1px solid ${({ theme }) => theme.colors.black_30};
 `;
 
@@ -11,8 +10,9 @@ export const HeadingFirst = styled.h1`
   position: relative;
   color: ${({ theme }) => theme.colors.gray_blue_20};
   font-weight: ${({ theme }) => theme.typography.weight.medium};
-  margin: ${({ theme }) => theme.figure * 5}px 0
+  margin: ${({ theme }) => theme.figure * 6}px 0
     ${({ theme }) => theme.figure * 3}px;
+
   cursor: pointer;
 
   ${({ theme }) => theme.typography.display_md};
@@ -31,7 +31,7 @@ export const HeadingFirst = styled.h1`
 export const HeadingSecond = styled.h2`
   color: ${({ theme }) => theme.colors.gray_blue_20};
   font-weight: ${({ theme }) => theme.typography.weight.medium};
-  margin: ${({ theme }) => theme.figure * 5}px 0
+  margin: ${({ theme }) => theme.figure * 3}px 0
     ${({ theme }) => theme.figure * 3}px;
   cursor: pointer;
 
@@ -96,8 +96,8 @@ export const BlockQuote = styled.blockquote`
   margin-bottom: ${({ theme }) => theme.figure * 3}px;
   padding: ${({ theme }) => theme.figure * 4}px
     ${({ theme }) => theme.figure * 5}px;
-  border-radius: ${({ theme }) => theme.figure * 2}px;
-  background-color: ${({ theme }) => theme.colors.gray_blue_35};
+  border-radius: ${({ theme }) => theme.figure}px;
+  background-color: ${({ theme }) => theme.colors.gray_blue_60};
 
   p {
     margin-bottom: ${({ theme }) => theme.figure * 2}px;
@@ -119,7 +119,6 @@ export const Anchor = styled.a`
 
 export const Preformatted = styled.pre`
   margin-bottom: ${({ theme }) => theme.figure * 3}px;
-  padding: ${({ theme }) => theme.figure * 2}px;
 
   div {
     border-radius: ${({ theme }) => theme.figure * 2}px;
@@ -129,16 +128,20 @@ export const Preformatted = styled.pre`
 export const UnorderedList = styled.ul`
   display: flex;
   flex-direction: column;
-  gap: ${({ theme }) => theme.figure / 2}px;
+  gap: ${({ theme }) => theme.figure * 2}px;
   margin-bottom: ${({ theme }) => theme.figure / 2}px;
   color: ${({ theme }) => theme.colors.black_70};
-  list-style: inside;
+  list-style-type: disc;
+  list-style-position: inside;
+  text-indent: -1.2em;
+  padding-left: 1em;
 
   ${({ theme }) => theme.typography.text_lg}
 
-  ul, ol {
+  ul,
+  ol {
+    gap: 0;
     margin-top: ${({ theme }) => theme.figure}px;
-    margin-left: ${({ theme }) => theme.figure * 2}px;
 
     li::marker {
       content: "▫︎ ";
@@ -157,7 +160,13 @@ export const OrderedList = styled.ol`
 
   ${({ theme }) => theme.typography.text_lg}
 
-  ul, ol {
+  p {
+    margin: 0;
+  }
+
+  ul,
+  ol,
+  p {
     margin-top: ${({ theme }) => theme.figure}px;
     margin-left: ${({ theme }) => theme.figure * 2}px;
   }
