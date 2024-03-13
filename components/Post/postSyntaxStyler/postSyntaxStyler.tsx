@@ -41,6 +41,7 @@ const postSyntaxStyler = {
       </Code>
     );
   },
+
   hr: ({ ...props }) => <HeadingRow {...props} />,
   h1: ({ children, ...props }) => (
     <Link href={`#${getPostHeadLinkId(children)}`}>
