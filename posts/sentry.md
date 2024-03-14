@@ -3,7 +3,7 @@ title: "Sentry 도입 배경 및 기본 세팅 방법"
 date: "2023-05-23"
 description: "사내 코드에 Sentry를 도입하게 된 배경 및 고찰에 대한 기록"
 tags: ["Sentry", "CI"]
-thumbnail: "thumbnail.png"
+thumbnail: "thumbnail.jpg"
 ---
 
 > 💡 사내 코드에 Sentry를 도입하게 된 배경과, 기본 환경 세팅 방법 및 세팅하면서 어려웠던 점들에 대해 정리한 글입니다.
@@ -59,12 +59,11 @@ thumbnail: "thumbnail.png"
 
 ### 4-1. 환경 변수
 
-`.env.production`
-
-- Reference
-  ![](/images/posts/sentry/reference.png)
+![](/images/posts/sentry/reference.png)
 
 ```jsx
+//.env.production
+
 // production mode에서만 실행
 SENTRY_IGNORE_API_RESOLUTION_ERROR = 1;
 NEXT_PUBLIC_SENTRY_DSN = "별도전달";
@@ -293,13 +292,11 @@ Sentry.withScope((scope) => {
 ### 4. Level
 
 이벤트마다 level을 설정항 이벤트의 중요도를 식별할 수 있다.
-
-fetal, error, warning, log, info, debug, critical로 설정 가능
+fatal, error, warning, log, info, debug, critical로 설정 가능
 
 ### 5. Issue Grouping
 
 모든 이벤트는 fingerprint를 가지고 있으며, **fingerprint가 동일한 이벤트는 하나의 이슈로 그룹화** 된다.
-
 이를 이용하여 재설정 가능하다.
 
 ```jsx
@@ -365,27 +362,20 @@ post 요청을 보낸 후 그 response값을 promise로 받아오기 위해 muta
 
 react-query 개발자가 직접 쓴 [mutation에 관한 글](https://tkdodo.eu/blog/mastering-mutations-in-react-query)을 보았는데, 그는 아래와 같이 설명하였다.
 
-<aside>
-💡 변형 응답에 액세스해야 할 때 mutateAsync를 사용하고 싶을 수도 있지만 **저는 거의 항상 mutate를 사용해야 한다고 주장합니다.**
-
-콜백을 통해 데이터 또는 오류에 계속 액세스할 수 있으며 오류 처리에 대해 걱정할 필요가 없습니다. **mutateAsync를 사용하면 Promise를 제어할 수 있으므로 수동으로 오류를 잡아야 합니다.**
-
-그렇지 않으면 unhandled promise rejection을 을 만나게 됩니다.
-
-</aside>
+> 💡 변형 응답에 액세스해야 할 때 mutateAsync를 사용하고 싶을 수도 있지만 **저는 거의 항상 mutate를 사용해야 한다고 주장합니다.**
+> 콜백을 통해 데이터 또는 오류에 계속 액세스할 수 있으며 오류 처리에 대해 걱정할 필요가 없습니다. **mutateAsync를 사용하면 Promise를 제어할 수 있으므로 수동으로 오류를 잡아야 합니다.**
+> 그렇지 않으면 unhandled promise rejection을 을 만나게 됩니다.
 
 따라서 mutateAsync 사용부 중, 불필요하게 mutateAsync를 사용한 곳은 mutate 함수로 일괄 변경 했고, 필요에 의해 mutateAsync를 사용해야 하는 곳은 `.catch()`문을 추가하여 별도로 에러를 핸들링 했다.
 
 ### 3. 아쉬운점
 
 Sentry 설치한지 반년의 시간이 흘렀다. 하지만 초반에 세팅에 들인 시간에 비해 Sentry를 엄청 적극적으로 활용하고 있지 못했다는 생각이 든다. 그 이유에 대해 생각해봤을 때, 가장 큰 이유는 유의미한 에러 로그 쌓기에 실패한 것이라고 생각한다. 필요없는 에러까지 모두 쌓이다 보니 에러 발생 알람이 무의미한 경우가 있었기 때문이다.
-
 이를 보완하기 위해서는 앱 전체를 `withSentry`로 감싸서 사용하지 말고 다른 방법을 사용했어야 할 것 같다.
 
 자바스크립트 에러인지, axios 요청 에러인지 구분하고 이 에러들을 정리해서 필요한 에러만 Sentry 로그에 쌓이도록 별도 제공 함수를 군데군데 사용했으면 더 유의미한 로그가 쌓이지 않았을까 싶다.
 
 그리고 다른 업무에 밀려 에러 트래킹은 우선 순위가 밀리게 되었고, 그러다 보니 기존에 작성되어 있던 많은 양의 코드에 에러 핸들링을 추가하고, 에러 관련 모듈을 만들어 적용하는 것이 쉽지 않은 상황이 되었던 것 같다.
-
 다른 곳에서는 어떻게 유의미한 데이터를 쌓았는지 많이 찾아보고 적용해보고 싶다.
 
-[Sentry로 우아하게 프론트엔드 에러 추적하기 | 카카오페이 기술 블로그](https://tech.kakaopay.com/post/frontend-sentry-monitoring/)
+참고 자료: [Sentry로 우아하게 프론트엔드 에러 추적하기 | 카카오페이 기술 블로그](https://tech.kakaopay.com/post/frontend-sentry-monitoring/)

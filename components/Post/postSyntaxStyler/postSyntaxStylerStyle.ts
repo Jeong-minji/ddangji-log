@@ -12,7 +12,6 @@ export const HeadingFirst = styled.h1`
   font-weight: ${({ theme }) => theme.typography.weight.medium};
   margin: ${({ theme }) => theme.figure * 6}px 0
     ${({ theme }) => theme.figure * 3}px;
-
   cursor: pointer;
 
   ${({ theme }) => theme.typography.display_md};
@@ -31,7 +30,7 @@ export const HeadingFirst = styled.h1`
 export const HeadingSecond = styled.h2`
   color: ${({ theme }) => theme.colors.gray_blue_20};
   font-weight: ${({ theme }) => theme.typography.weight.medium};
-  margin: ${({ theme }) => theme.figure * 3}px 0
+  margin: ${({ theme }) => theme.figure * 6}px 0
     ${({ theme }) => theme.figure * 3}px;
   cursor: pointer;
 
@@ -61,7 +60,7 @@ export const HeadingFourth = styled.h4`
 export const Paragraph = styled.p`
   color: ${({ theme }) => theme.colors.black_80};
   font-weight: ${({ theme }) => theme.typography.weight.light};
-  margin-bottom: ${({ theme }) => theme.figure * 4}px;
+  margin: ${({ theme }) => theme.figure * 4}px 0;
 
   ${({ theme }) => theme.typography.text_lg}
 `;
@@ -93,7 +92,7 @@ export const ImageText = styled.span`
 `;
 
 export const BlockQuote = styled.blockquote`
-  margin-bottom: ${({ theme }) => theme.figure * 3}px;
+  margin-bottom: ${({ theme }) => theme.figure * 6}px;
   padding: ${({ theme }) => theme.figure * 4}px
     ${({ theme }) => theme.figure * 5}px;
   border-radius: ${({ theme }) => theme.figure}px;
@@ -110,6 +109,10 @@ export const BlockQuote = styled.blockquote`
 
   a {
     color: ${({ theme }) => theme.colors.white_70};
+  }
+
+  strong {
+    color: ${({ theme }) => theme.colors.gray_blue_10};
   }
 `;
 
@@ -128,12 +131,11 @@ export const Preformatted = styled.pre`
 export const UnorderedList = styled.ul`
   display: flex;
   flex-direction: column;
-  gap: ${({ theme }) => theme.figure * 2}px;
+  gap: ${({ theme }) => theme.figure}px;
   margin-bottom: ${({ theme }) => theme.figure / 2}px;
   color: ${({ theme }) => theme.colors.black_70};
-  list-style-type: disc;
-  list-style-position: inside;
-  text-indent: -1.2em;
+  list-style: disc;
+  list-style-type: style inside;
   padding-left: 1em;
 
   ${({ theme }) => theme.typography.text_lg}
@@ -147,28 +149,36 @@ export const UnorderedList = styled.ul`
       content: "▫︎ ";
     }
   }
+
+  p {
+    margin: 0;
+  }
 `;
 
 export const OrderedList = styled.ol`
   display: flex;
   flex-direction: column;
-  gap: ${({ theme }) => theme.figure / 2}px;
+  gap: ${({ theme }) => theme.figure}px;
   margin-bottom: ${({ theme }) => theme.figure / 2}px;
   color: ${({ theme }) => theme.colors.black_70};
   list-style: decimal;
-  margin-left: ${({ theme }) => theme.figure * 2}px;
+  list-style-type: style inside;
+  padding-left: 1em;
 
   ${({ theme }) => theme.typography.text_lg}
 
-  p {
-    margin: 0;
+  ul,
+  ol {
+    gap: 0;
+    margin-top: ${({ theme }) => theme.figure}px;
+
+    li::marker {
+      content: "▫︎ ";
+    }
   }
 
-  ul,
-  ol,
   p {
-    margin-top: ${({ theme }) => theme.figure}px;
-    margin-left: ${({ theme }) => theme.figure * 2}px;
+    margin: 0;
   }
 `;
 

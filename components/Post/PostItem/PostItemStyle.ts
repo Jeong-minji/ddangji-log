@@ -29,7 +29,6 @@ export const PostTitle = styled.p`
   color: ${({ theme }) => theme.colors.black_70};
   font-weight: 700;
   word-break: keep-all;
-  white-space: pre-line;
   transition: 0.3s;
 
   &:hover {

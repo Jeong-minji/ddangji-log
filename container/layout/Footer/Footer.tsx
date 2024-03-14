@@ -24,21 +24,26 @@ const Footer = ({ isVisible }: FooterProps) => {
       <FooterContainer>
         <FooterContact>Contact</FooterContact>
         <FooterContents>
-          <FooterInfo>
+          {/* <FooterInfo>
             Email
             <br />
             <FooterAnchor href={FOOTER.EMAIL.mailTo}>
               {FOOTER.EMAIL.base}
             </FooterAnchor>
-          </FooterInfo>
+          </FooterInfo> */}
+          <FooterIcons>
+            <li>
+              <Image src='/images/icons/email.png' width={16} height={16} />
+
+              <FooterAnchor href={FOOTER.EMAIL.mailTo}>
+                {FOOTER.EMAIL.base}
+              </FooterAnchor>
+            </li>
+          </FooterIcons>
           <FooterIcons>
             <li>
               <Image src='/images/icons/github.png' width={16} height={16} />
               <FooterAnchor href={FOOTER.GITHUB}>github</FooterAnchor>
-            </li>
-            <li>
-              <Image src='/images/icons/instagram.png' width={16} height={16} />
-              <FooterAnchor href={FOOTER.INSTAGRAM}>sns</FooterAnchor>
             </li>
           </FooterIcons>
           <FooterDescription>{FOOTER.DESCRIPTION}</FooterDescription>
